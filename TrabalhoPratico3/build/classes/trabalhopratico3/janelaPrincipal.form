@@ -198,6 +198,9 @@
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="nometxtKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="valorAtualtxt">
           <Properties>
@@ -205,6 +208,9 @@
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="valorAtualtxtKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JFormattedTextField" name="datatxt">
           <Properties>
@@ -215,6 +221,9 @@
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="datatxtKeyTyped"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JCheckBox" name="hojecb">
           <Properties>
@@ -309,6 +318,9 @@
               <Font name="Tahoma" size="18" style="0"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="aportetxtKeyTyped"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

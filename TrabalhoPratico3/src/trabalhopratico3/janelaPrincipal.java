@@ -89,8 +89,18 @@ public class janelaPrincipal extends javax.swing.JFrame {
         });
 
         nometxt.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        nometxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                nometxtKeyTyped(evt);
+            }
+        });
 
         valorAtualtxt.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        valorAtualtxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                valorAtualtxtKeyTyped(evt);
+            }
+        });
 
         try {
             datatxt.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
@@ -98,6 +108,11 @@ public class janelaPrincipal extends javax.swing.JFrame {
             ex.printStackTrace();
         }
         datatxt.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        datatxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                datatxtKeyTyped(evt);
+            }
+        });
 
         hojecb.setFont(new java.awt.Font("Tahoma", 2, 11)); // NOI18N
         hojecb.setText("hoje?");
@@ -129,6 +144,11 @@ public class janelaPrincipal extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tabela);
 
         aportetxt.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        aportetxt.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                aportetxtKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -220,7 +240,7 @@ public class janelaPrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void adicionarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarBtnActionPerformed
+    private void adicionarInvestimento(){
         String nome = nometxt.getText();
         String aporte = aportetxt.getText();
         String data = datatxt.getText();
@@ -254,7 +274,10 @@ public class janelaPrincipal extends javax.swing.JFrame {
             }
 
         }
-        
+    }
+    
+    private void adicionarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adicionarBtnActionPerformed
+        adicionarInvestimento();
     }//GEN-LAST:event_adicionarBtnActionPerformed
 
     //Verifica a data a partir de várias possibilidades
@@ -304,6 +327,34 @@ public class janelaPrincipal extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_repetirAportecbActionPerformed
+
+    private void nometxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_nometxtKeyTyped
+        //Muda o foco para o próximo campo de texto
+        if(evt.getKeyChar() == '\n'){
+            aportetxt.grabFocus();
+        }
+    }//GEN-LAST:event_nometxtKeyTyped
+
+    private void aportetxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_aportetxtKeyTyped
+        //Muda o foco para o próximo campo de texto
+        if(evt.getKeyChar() == '\n'){
+            datatxt.grabFocus();
+        }
+    }//GEN-LAST:event_aportetxtKeyTyped
+
+    private void datatxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_datatxtKeyTyped
+        //Muda o foco para o próximo campo de texto
+        if(evt.getKeyChar() == '\n'){
+            valorAtualtxt.grabFocus();
+        }
+    }//GEN-LAST:event_datatxtKeyTyped
+
+    private void valorAtualtxtKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_valorAtualtxtKeyTyped
+        //Vai para o método para adicionarInvestimento um novo investimento
+        if(evt.getKeyChar() == '\n'){
+            adicionarInvestimento();
+        }
+    }//GEN-LAST:event_valorAtualtxtKeyTyped
 
     //Apaga todos os campos de formulário
     private void limparCampos(){
